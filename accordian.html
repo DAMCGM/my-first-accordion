@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Accordion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+         
+        body {
+            background-image: url("black-background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .title-container {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+        }
+
+        .title-container h1 {
+            font-family: cursive;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .title-container p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 22px;
+            color: greenyellow;
+            font-weight: bold;
+        }
+
+        .title-container .quote {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            color: rgb(192, 193, 189);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .title-container .quote i {
+            margin-right: 10px;
+            color: greenyellow;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .accordion-button {
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #404142 !important;
+            color: rgb(45, 203, 20) !important; /* Green color */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: none;
+        }
+
+        .accordion-button:focus,
+        .accordion-button:not(.collapsed) {
+            color: rgb(45, 203, 20) !important; /* Keep text green */
+            background-color: #404142 !important; /* Keep background consistent */
+            box-shadow: none !important; /* Remove Bootstrap default shadow */
+        }
+
+        .accordion-item {
+            background-color: #212529;
+            border: 1px solid #495057;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .accordion-body {
+            color: rgb(236, 224, 224);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Remove Default Caret */
+        .accordion-button::after {
+            display: none !important;
+        }
+
+        /* Icon Styling (Square on the Right) */
+        .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border: 2px solid rgb(29, 198, 31);
+            background-color: transparent;
+            color: rgb(29, 198, 31);
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-left: auto;
+        }
+
+        .accordion-button:not(.collapsed) .icon-box::before {
+            content: "−";
+        }
+
+        .accordion-button.collapsed .icon-box::before {
+            content: "+";
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Title Section -->
+    <div class="title-container">
+        <h1>Success</h1>
+        <p>_ Of Ratan Tata</p>
+        <div class="quote">
+            <i class="fa-solid fa-arrow-right"></i>
+            "Leadership is about taking responsibility, not making excuses."
+        </div>
+    </div>
+
+    <!-- Accordion Section -->
+    <div class="container">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+
+            <!-- Accordion Item #1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Aim for excellence and innovation
+                        <span class="icon-box"></span>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        Ratan Tata has consistently emphasized the importance of pushing the boundaries of innovation and excellence within the Tata Group. He has been instrumental in implementing transformative changes and has consistently encouraged his team to think creatively and strive for continuous improvement.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item #2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Embrace adaptability to change:
+                        <span class="icon-box"></span>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Ratan Tata has always been open to change and has made it a central part of his approach to business. He has successfully navigated the Tata Group through major transitions and has consistently been quick to adopt new technologies and market trends. This adaptability has enabled the Tata Group to remain relevant and competitive in a rapidly evolving business environment.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Item #3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Adhere to ethical leadership
+                        <span class="icon-box"></span>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Ratan Tata is well-known for his commitment to ethical leadership and corporate social responsibility. He has always conducted business with integrity and treated all stakeholders, including employees, customers, and communities, with respect and fairness.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
